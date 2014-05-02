@@ -22,7 +22,7 @@ $str_booking_time_category = (isset($_GET['bookings'])) ? $_GET['bookings'] : 't
 $arr_bookings = $obj_bookings->get_user_booking($_SESSION['id'], 'approved', $str_booking_time_category);
 
 if($bln_is_resource) {
-    $arr_appointments = $arr_bookings = $obj_bookings->get_user_appointments($arr_user['resource_id'], 'pending');
+    //$arr_appointments = $arr_bookings = $obj_bookings->get_user_appointments($arr_user['resource_id'], 'pending');
 
 }
 

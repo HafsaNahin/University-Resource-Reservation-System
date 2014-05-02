@@ -3,6 +3,11 @@
 require 'core/init.php';
 $obj_general->logged_out_protect();
 
+$arr_user = $obj_users->userdata($_SESSION['id']);
+$bln_is_admin = $obj_general->is_admin($arr_user);
+$bln_is_moderator = $obj_general->is_moderator($arr_user);
+$bln_is_resource = $obj_general->is_resource($arr_user);
+
 # Create the resource, while form submitted.
 if (empty($_POST) === false) {
     $bool_resource_created = $obj_resources->add_resource($_POST);
