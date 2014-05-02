@@ -25,12 +25,15 @@ $str_page = (isset($str_page)) ? $str_page : '';
         <li class="<?php if($str_page == 'resources') echo 'active'; ?>">
             <a href="resources.php"><i class="fa fa-folder fa-fw"></i> Resources</a>
         </li>
-        <li class="<?php if($str_page == 'projects') echo 'active'; ?>">
-            <a href="projects.php"><i class="fa fa-list-ul fa-fw"></i> Projects</a>
-        </li>
-        <li class="<?php if($str_page == 'reports') echo 'active'; ?>">
-            <a href="reports.php"><i class="fa fa-bar-chart-o fa-fw"></i> Reports</a>
-        </li>
+        <?php
+        if(isset($bln_is_moderator)) {
+            ?>
+            <li class="<?php if($str_page == 'reports') echo 'active'; ?>">
+                <a href="reports.php"><i class="fa fa-bar-chart-o fa-fw"></i> Reports</a>
+            </li>
+        <?php
+        }
+        ?>
     </ul>
     <!-- /.navbar-top-links -->
 
