@@ -5,6 +5,7 @@ $obj_general->logged_out_protect();
 
 $arr_user = $obj_users->userdata($_SESSION['id']);
 $bln_is_admin = $obj_general->is_admin($arr_user);
+$bln_is_moderator = $obj_general->is_moderator($arr_user);
 
 if (!$bln_is_admin) {
     exit();
